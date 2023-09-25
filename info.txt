@@ -1,0 +1,4 @@
+Used unspalsh.com for images.
+icons.getbootstrap.com - for icons
+coolors.co - for colours
+postion-relative = > position: absolute;
