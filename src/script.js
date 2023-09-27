@@ -1,49 +1,13 @@
 let shop = document.getElementById('shop'); 
 
-let shopItemsData = [
-    {
-        id : 0,
-        name : "Men's Cap",
-        price : 45,
-        desc : "claudio-schwarz",
-        img : "images/claudio-schwarz-PH8GUKG-Do0-unsplash.jpg"
-    },
-    {
-        id : 1,
-        name : "Leather Cap",
-        price : 100,
-        desc : "adrian-ordonez",
-        img : "images/adrian-ordonez-P0W27GRvyww-unsplash.jpg"
-    },
-    {
-        id : 2,
-        name : "Jeans",
-        price : 120,
-        desc : "eduardo-pastor-3oejsU5OQVk",
-        img : "images/eduardo-pastor-3oejsU5OQVk-unsplash.jpg"
-    },
-    {
-        id : 3,
-        name : "Men's Cap",
-        price : 145,
-        desc : "claudio-schwarz",
-        img : "images/claudio-schwarz-PH8GUKG-Do0-unsplash.jpg"
-    },
-    {
-        id : 4,
-        name : "Men's Cap",
-        price : 145,
-        desc : "claudio-schwarz",
-        img : "images/claudio-schwarz-PH8GUKG-Do0-unsplash.jpg"
-    },
-]
+
 let basket = JSON.parse(localStorage.getItem("data")) || [];
 let generateShop = ()=>{
     return shop.innerHTML = shopItemsData.map((x)=>{
         let {id, name, price, desc, img} = x;
         let search = basket.find((x)=> x.id === id) || [];
         return ` <div id = product-id-${id} class="item">
-        <img width="219" src=${img} alt="">
+        <img width="219" height = "180" src=${img} alt="">
         <div class="details">
             <h3>${name}</h3>
             <p>${desc}</p>
@@ -88,8 +52,10 @@ let decrement = (id)=>{
         search.item -= 1;
     }
     // console.log(basket); 
-    localStorage.setItem("data", JSON.stringify(basket))
     update(id);
+    basket = basket.filter((x) => x.item !== 0 );
+    localStorage.setItem("data", JSON.stringify(basket))
+    
 }
 
 let update = (id)=>{

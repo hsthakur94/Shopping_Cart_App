@@ -12,10 +12,20 @@ bod {
 .navbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: #669bbc;
   color: #780000;
   padding: 25px 60px;
   margin-bottom: 30px;
+}
+.navbar #Logo {
+  font-size: larger;
+  text-decoration: none;
+  color:rgb(242, 234, 234) ;
+  /* border: 1px solid white;
+  border-radius: 5px;
+  background-color: rgb(242, 234, 234);
+  padding: 2px 5px; */
 }
 .cart {
   background-color: rgb(242, 234, 234);
@@ -59,8 +69,12 @@ bod {
 }
 
 .item {
-  border: 2px solid silver;
+  border: 2px solid goldenrod;
   border-radius: 4px;
+}
+.item img{
+  width: 100%;
+  border-radius: 2px 2px 0 0;
 }
 .details {
   display: flex;
@@ -79,7 +93,72 @@ bod {
 }
 .bi-dash-lg {
   color: red;
+  cursor: pointer;
 }
 .bi-plus-lg {
   color: green;
+  cursor: pointer;
+}
+
+
+.text-center{
+  text-align: center;
+  margin-top: 20px;
+}
+/* styling for button (back to home) in cart */
+.HomeBtn, .checkout, .removeAll{
+  margin-top: 5px;
+  padding: 2px 4px;
+  background-color: rgb(103, 103, 226);
+  color: bisque;
+  border-radius: 2px;
+  border-color: darkblue;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.checkout{
+  background: green;
+}
+.removeAll{
+  background: rgb(173, 7, 7);
+}
+
+.bi-x-lg{
+  color: red;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Styling the shopping cart */
+.shopping-cart{
+  display: grid;
+  grid-template-columns: repeat(1,320px);
+  justify-content: center;
+  gap: 15px;
+}
+/* Styling the cart items */
+
+.cart-item{
+  border: 2px solid goldenrod; 
+  border-radius: 5px;
+  display: flex;
+}
+.title-price-x{
+  width: 193px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.title-price{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-item-price{
+  /* width: 40px; */
+  background-color: black;
+  color: white;
+  padding:3px 4px;
+  border-radius: 3px;
 }
